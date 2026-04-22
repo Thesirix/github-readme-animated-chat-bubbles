@@ -1,0 +1,198 @@
+<svg width="600" height="227" viewBox="0 0 600 227" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .bubble-left {
+            fill: #E9E9EB;
+        }
+
+        .text-left {
+            fill: #000000;
+            font-size: 15px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        .bubble-right {
+            fill: #34C759;
+        }
+
+        .text-right {
+            fill: #ffffff;
+            font-size: 15px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        .emoji {
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+        }
+
+        /* === 14s loop cycle ===
+           0.0s  type-1 visible
+           1.5s  msg-1 pops in
+           2.5s  type-2 visible
+           4.0s  msg-2 pops in
+           5.0s  type-3 visible
+           6.5s  msg-3 pops in
+           7.5s  type-4 visible
+           9.0s  msg-4 pops in
+           9.2s  all visible
+           12.0s fade out begins
+           13.0s all hidden
+           14.0s restart
+        */
+
+        @keyframes type1-anim {
+            0%   { opacity: 0; }
+            1%   { opacity: 1; }
+            9%   { opacity: 1; }
+            11%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes msg1-anim {
+            0%   { opacity: 0; transform: translate(10px, 5px); }
+            11%  { opacity: 0; transform: translate(10px, 5px); }
+            13%  { opacity: 1; transform: translate(10px, 0); }
+            86%  { opacity: 1; transform: translate(10px, 0); }
+            93%  { opacity: 0; transform: translate(10px, 0); }
+            100% { opacity: 0; transform: translate(10px, 5px); }
+        }
+
+        @keyframes type2-anim {
+            0%   { opacity: 0; }
+            18%  { opacity: 0; }
+            19%  { opacity: 1; }
+            27%  { opacity: 1; }
+            29%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes msg2-anim {
+            0%   { opacity: 0; transform: translate(-10px, 5px); }
+            29%  { opacity: 0; transform: translate(-10px, 5px); }
+            31%  { opacity: 1; transform: translate(0px, 0); }
+            86%  { opacity: 1; transform: translate(0px, 0); }
+            93%  { opacity: 0; transform: translate(0px, 0); }
+            100% { opacity: 0; transform: translate(-10px, 5px); }
+        }
+
+        @keyframes type3-anim {
+            0%   { opacity: 0; }
+            36%  { opacity: 0; }
+            37%  { opacity: 1; }
+            44%  { opacity: 1; }
+            46%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes msg3-anim {
+            0%   { opacity: 0; transform: translate(10px, 5px); }
+            46%  { opacity: 0; transform: translate(10px, 5px); }
+            48%  { opacity: 1; transform: translate(10px, 0); }
+            86%  { opacity: 1; transform: translate(10px, 0); }
+            93%  { opacity: 0; transform: translate(10px, 0); }
+            100% { opacity: 0; transform: translate(10px, 5px); }
+        }
+
+        @keyframes type4-anim {
+            0%   { opacity: 0; }
+            54%  { opacity: 0; }
+            55%  { opacity: 1; }
+            62%  { opacity: 1; }
+            64%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes msg4-anim {
+            0%   { opacity: 0; transform: translate(-10px, 5px); }
+            64%  { opacity: 0; transform: translate(-10px, 5px); }
+            66%  { opacity: 1; transform: translate(0px, 0); }
+            86%  { opacity: 1; transform: translate(0px, 0); }
+            93%  { opacity: 0; transform: translate(0px, 0); }
+            100% { opacity: 0; transform: translate(-10px, 5px); }
+        }
+
+        .type-1 { animation: type1-anim 14s infinite; }
+        .msg-1  { animation: msg1-anim  14s infinite; }
+        .type-2 { animation: type2-anim 14s infinite; }
+        .msg-2  { animation: msg2-anim  14s infinite; }
+        .type-3 { animation: type3-anim 14s infinite; }
+        .msg-3  { animation: msg3-anim  14s infinite; }
+        .type-4 { animation: type4-anim 14s infinite; }
+        .msg-4  { animation: msg4-anim  14s infinite; }
+    </style>
+
+    <g transform="translate(10, 20)">
+        <g class="type-1">
+            <rect width="65" height="42" rx="21" class="bubble-left" />
+            <circle cx="16" cy="21" r="4.5" fill="#999">
+                <animate attributeName="cy" values="21;15;21" dur="0.7s" begin="0s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+            </circle>
+            <circle cx="32" cy="21" r="4.5" fill="#999">
+                <animate attributeName="cy" values="21;15;21" dur="0.7s" begin="0.15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+            </circle>
+            <circle cx="48" cy="21" r="4.5" fill="#999">
+                <animate attributeName="cy" values="21;15;21" dur="0.7s" begin="0.30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+            </circle>
+        </g>
+        <g class="msg-1">
+            <rect width="282" height="42" rx="21" class="bubble-left" />
+            <text x="18" y="27" class="text-left">Hi! What kind of magic do you do?</text>
+        </g>
+    </g>
+
+    <g transform="translate(248, 70)">
+        <g class="type-2" transform="translate(277, 0)">
+            <rect width="65" height="42" rx="21" class="bubble-right" />
+            <circle cx="16" cy="21" r="4.5" fill="#fff">
+                <animate attributeName="cy" values="21;15;21" dur="0.7s" begin="0s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+            </circle>
+            <circle cx="32" cy="21" r="4.5" fill="#fff">
+                <animate attributeName="cy" values="21;15;21" dur="0.7s" begin="0.15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+            </circle>
+            <circle cx="48" cy="21" r="4.5" fill="#fff">
+                <animate attributeName="cy" values="21;15;21" dur="0.7s" begin="0.30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+            </circle>
+        </g>
+        <g class="msg-2">
+            <rect width="342" height="42" rx="21" class="bubble-right" />
+            <text x="18" y="27" class="text-right">I'm a software developer in Marseille! ☀️</text>
+        </g>
+    </g>
+
+    <g transform="translate(10, 120)">
+        <g class="type-3">
+            <rect width="65" height="42" rx="21" class="bubble-left" />
+            <circle cx="16" cy="21" r="4.5" fill="#999">
+                <animate attributeName="cy" values="21;15;21" dur="0.7s" begin="0s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+            </circle>
+            <circle cx="32" cy="21" r="4.5" fill="#999">
+                <animate attributeName="cy" values="21;15;21" dur="0.7s" begin="0.15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+            </circle>
+            <circle cx="48" cy="21" r="4.5" fill="#999">
+                <animate attributeName="cy" values="21;15;21" dur="0.7s" begin="0.30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+            </circle>
+        </g>
+        <g class="msg-3">
+            <rect width="237" height="42" rx="21" class="bubble-left" />
+            <text x="18" y="27" class="text-left">What's your favorite spell?</text>
+        </g>
+    </g>
+
+    <g transform="translate(248, 170)">
+        <g class="type-4" transform="translate(277, 0)">
+            <rect width="65" height="42" rx="21" class="bubble-right" />
+            <circle cx="16" cy="21" r="4.5" fill="#fff">
+                <animate attributeName="cy" values="21;15;21" dur="0.7s" begin="0s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+            </circle>
+            <circle cx="32" cy="21" r="4.5" fill="#fff">
+                <animate attributeName="cy" values="21;15;21" dur="0.7s" begin="0.15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+            </circle>
+            <circle cx="48" cy="21" r="4.5" fill="#fff">
+                <animate attributeName="cy" values="21;15;21" dur="0.7s" begin="0.30s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1" />
+            </circle>
+        </g>
+        <g class="msg-4">
+            <rect width="342" height="42" rx="21" class="bubble-right" />
+            <text x="18" y="27" class="text-right">Saying 'It works on my Windows machine' 🪄</text>
+        </g>
+    </g>
+</svg>
