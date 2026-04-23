@@ -39,21 +39,21 @@ chat.svg       ←  generated output, ready to embed
 
 All placeholders are resolved at generation time:
 
-| Variable | Type | Description |
-|---|---|---|
-| `{MSG_1}` | string | Text content of message 1 (left / received) |
-| `{MSG_2}` | string | Text content of message 2 (right / sent) |
-| `{MSG_3}` | string | Text content of message 3 (left / received) |
-| `{MSG_4}` | string | Text content of message 4 (right / sent) |
-| `{W_MSG_1}` | int (px) | Bubble width for message 1, auto-computed |
-| `{W_MSG_2}` | int (px) | Bubble width for message 2, auto-computed |
-| `{W_MSG_3}` | int (px) | Bubble width for message 3, auto-computed |
-| `{W_MSG_4}` | int (px) | Bubble width for message 4, auto-computed |
-| `{X_MSG_2}` | int (px) | X position of right bubble 2 (right-aligned) |
-| `{X_MSG_4}` | int (px) | X position of right bubble 4 (right-aligned) |
-| `{X_TYPING_2}` | int (px) | X offset of typing indicator for message 2 |
-| `{X_TYPING_4}` | int (px) | X offset of typing indicator for message 4 |
-| `{SVG_HEIGHT}` | int (px) | Total SVG canvas height, auto-computed |
+| Variable       | Type     | Description                                  |
+| -------------- | -------- | -------------------------------------------- |
+| `{MSG_1}`      | string   | Text content of message 1 (left / received)  |
+| `{MSG_2}`      | string   | Text content of message 2 (right / sent)     |
+| `{MSG_3}`      | string   | Text content of message 3 (left / received)  |
+| `{MSG_4}`      | string   | Text content of message 4 (right / sent)     |
+| `{W_MSG_1}`    | int (px) | Bubble width for message 1, auto-computed    |
+| `{W_MSG_2}`    | int (px) | Bubble width for message 2, auto-computed    |
+| `{W_MSG_3}`    | int (px) | Bubble width for message 3, auto-computed    |
+| `{W_MSG_4}`    | int (px) | Bubble width for message 4, auto-computed    |
+| `{X_MSG_2}`    | int (px) | X position of right bubble 2 (right-aligned) |
+| `{X_MSG_4}`    | int (px) | X position of right bubble 4 (right-aligned) |
+| `{X_TYPING_2}` | int (px) | X offset of typing indicator for message 2   |
+| `{X_TYPING_4}` | int (px) | X offset of typing indicator for message 4   |
+| `{SVG_HEIGHT}` | int (px) | Total SVG canvas height, auto-computed       |
 
 ### 2. Auto Width Calculation
 
@@ -111,12 +111,12 @@ All animations are pure CSS `@keyframes` defined inside the SVG `<style>` block.
 
 ### Keyframes
 
-| Name | Behavior |
-|---|---|
-| `wait` | Keeps the element invisible (`opacity: 0`) for a delay period |
-| `fade-in-out` | Fades in, holds visible, then fades out. Used for typing indicators. |
-| `pop-left` | Slides in from slightly below with an opacity fade. For received bubbles. |
-| `pop-right` | Slides in from slightly below with an opacity fade. For sent bubbles. |
+| Name          | Behavior                                                                  |
+| ------------- | ------------------------------------------------------------------------- |
+| `wait`        | Keeps the element invisible (`opacity: 0`) for a delay period             |
+| `fade-in-out` | Fades in, holds visible, then fades out. Used for typing indicators.      |
+| `pop-left`    | Slides in from slightly below with an opacity fade. For received bubbles. |
+| `pop-right`   | Slides in from slightly below with an opacity fade. For sent bubbles.     |
 
 ### Staggered Timeline
 
@@ -140,8 +140,10 @@ Each CSS class pairs a `wait` animation (holds invisible) with the actual motion
 
 ```css
 .msg-1 {
-    animation: wait 1.5s, pop-left 0.2s 1.5s forwards;
-    opacity: 0;
+  animation:
+    wait 1.5s,
+    pop-left 0.2s 1.5s forwards;
+  opacity: 0;
 }
 ```
 
@@ -165,16 +167,16 @@ Each dot is offset by `0.15s` (`begin="0s"`, `"0.15s"`, `"0.30s"`) to create the
 
 ## Visual Design
 
-| Property | Received (left) | Sent (right) |
-|---|---|---|
-| Background | `#E9E9EB` (light grey) | `#34C759` (iMessage green) |
-| Text color | `#000000` | `#ffffff` |
-| Font | System UI stack (SF Pro / Segoe UI / Roboto) | Same |
-| Font size | 15px | 15px |
-| Border radius | `rx="21"` (pill shape) | Same |
-| Bubble height | 42px (fixed) | Same |
-| Canvas width | 600px | 600px |
-| Left margin | 10px | auto (right-anchored) |
+| Property      | Received (left)                              | Sent (right)               |
+| ------------- | -------------------------------------------- | -------------------------- |
+| Background    | `#E9E9EB` (light grey)                       | `#34C759` (iMessage green) |
+| Text color    | `#000000`                                    | `#ffffff`                  |
+| Font          | System UI stack (SF Pro / Segoe UI / Roboto) | Same                       |
+| Font size     | 15px                                         | 15px                       |
+| Border radius | `rx="21"` (pill shape)                       | Same                       |
+| Bubble height | 42px (fixed)                                 | Same                       |
+| Canvas width  | 600px                                        | 600px                      |
+| Left margin   | 10px                                         | auto (right-anchored)      |
 
 ---
 
@@ -241,12 +243,20 @@ Edit the CSS classes in `template.svg`:
 
 ```css
 /* Received bubbles */
-.bubble-left  { fill: #E9E9EB; }   /* try #1C1C1E for dark mode */
-.text-left    { fill: #000000; }
+.bubble-left {
+  fill: #e9e9eb;
+} /* try #1C1C1E for dark mode */
+.text-left {
+  fill: #000000;
+}
 
 /* Sent bubbles */
-.bubble-right { fill: #34C759; }   /* try #0A84FF for iMessage blue */
-.text-right   { fill: #ffffff; }
+.bubble-right {
+  fill: #34c759;
+} /* try #0A84FF for iMessage blue */
+.text-right {
+  fill: #ffffff;
+}
 ```
 
 ### Change animation timing
@@ -254,7 +264,11 @@ Edit the CSS classes in `template.svg`:
 Each message's delay is controlled by two classes in `template.svg`. For example, to speed up the whole sequence, reduce all delay values proportionally:
 
 ```css
-.msg-2 { animation: wait 4.0s, pop-right 0.2s 4.0s forwards; }
+.msg-2 {
+  animation:
+    wait 4s,
+    pop-right 0.2s 4s forwards;
+}
 /*                        ^^^^                  ^^^^   ← both must match */
 ```
 
