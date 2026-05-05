@@ -295,6 +295,21 @@ def calculer_largeur(texte):
 
 ---
 
+## Daily Auto-Update Workflow
+
+A minimal GitHub Actions workflow (`.github/workflows/daily-update.yml`) re-runs `chat.py` every day at **00:00 UTC** and commits the regenerated `chat.svg` if it changed.
+
+```yaml
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+```
+
+Trigger it manually any time from the **Actions** tab → *Daily SVG Update* → *Run workflow*.
+
+---
+
 ## Requirements
 
 - Python 3.x (no third-party packages)
