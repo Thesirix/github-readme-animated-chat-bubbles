@@ -4,7 +4,7 @@
 
 # 💬 GitHub Readme Animated Chat Bubbles
 
-**Generate pixel-perfect animated messaging UIs directly in your GitHub profile README.**  
+**Generate pixel-perfect animated messaging UIs directly in your GitHub profile README.**
 Built with pure Python + SVG. No dependencies, no build step, no JavaScript.
 
 [![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat-square&logo=python)](https://python.org)
